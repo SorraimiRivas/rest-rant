@@ -16,16 +16,13 @@ const SearchScreen = () => {
   };
 
   return (
-    <View style={{ flex: 1 }}>
+    <>
       <SearchBar
         term={term}
         onTermChange={setTerm}
         onTermSubmit={() => searchApi(term)}
       />
       {error ? <Text>{error}</Text> : null}
-      <Text style={{ marginLeft: 15 }}>
-        We have found {results.length} rants
-      </Text>
       <ScrollView showsVerticalScrollIndicator={false}>
         <ResultsList
           results={filterResultsByPrice("$")}
@@ -37,7 +34,7 @@ const SearchScreen = () => {
           title="Big Spenders"
         />
       </ScrollView>
-    </View>
+    </>
   );
 };
 
