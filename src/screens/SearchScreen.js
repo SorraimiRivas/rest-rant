@@ -25,11 +25,17 @@ const SearchScreen = () => {
       {error ? <Text>{error}</Text> : null}
       <ScrollView showsVerticalScrollIndicator={false}>
         <ResultsList
+          dollar="$"
           results={filterResultsByPrice("$")}
           title="Cost Effective"
         />
-        <ResultsList results={filterResultsByPrice("$$")} title="Bit Pricier" />
         <ResultsList
+          dollar="$$"
+          results={filterResultsByPrice("$$")}
+          title="Bit Pricier"
+        />
+        <ResultsList
+          dollar="$$$"
           results={filterResultsByPrice("$$$")}
           title="Big Spenders"
         />

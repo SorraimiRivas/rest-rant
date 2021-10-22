@@ -4,10 +4,15 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { withNavigation } from "react-navigation";
 import ResultsDetail from "./ResultsDetail";
 
-const ResultsList = ({ title, results, navigation }) => {
+const ResultsList = ({ title, results, navigation, dollar }) => {
+  if (!results.length) {
+    return null;
+  }
   return (
     <View>
-      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.title}>
+        {title} - {dollar}
+      </Text>
 
       <FlatList
         horizontal
