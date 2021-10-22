@@ -17,3 +17,5 @@ const navigator = createStackNavigator(
 );
 
 export default createAppContainer(navigator);
+
+// course section completed 10/22/21
