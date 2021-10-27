@@ -15,6 +15,7 @@ const ResultsList = ({ title, results, navigation, dollar }) => {
       </Text>
 
       <FlatList
+        style={{ borderBottomWidth: 1, borderColor: "gray", paddingBottom: 10 }}
         horizontal
         showsHorizontalScrollIndicator={false}
         data={results}

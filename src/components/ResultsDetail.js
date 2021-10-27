@@ -1,5 +1,7 @@
 import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const ResultsDetail = ({ result }) => {
   return (
@@ -7,7 +9,16 @@ const ResultsDetail = ({ result }) => {
       <Text>{result.name}</Text>
       <Image style={styles.image} source={{ uri: result.image_url }} />
       <Text>
-        {result.rating} stars, {result.review_count} reviews.
+        {result.rating} {<AntDesign name="star" size={14} color="black" />}{" "}
+        {result.review_count}{" "}
+        {
+          <MaterialCommunityIcons
+            name="comment-multiple"
+            size={14}
+            color="black"
+          />
+        }
+        .
       </Text>
     </View>
   );
@@ -18,8 +29,8 @@ const styles = StyleSheet.create({
     marginLeft: 15,
   },
   image: {
-    width: 250,
-    height: 200,
+    width: 350,
+    height: 300,
     borderRadius: 4,
   },
 });
